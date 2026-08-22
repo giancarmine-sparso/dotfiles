@@ -1,0 +1,123 @@
+# =========================
+# Apertura e layout
+# =========================
+
+# Apri sempre adattando alla larghezza
+set adjust-open width
+
+# Una pagina per riga
+set pages-per-row 1
+
+# Spazio tra le pagine
+set page-v-padding 8
+set page-h-padding 8
+
+# Mostra statusbar + scrollbar verticale
+set guioptions sv
+
+# Ricorda posizione, zoom, pagina, bookmark ecc.
+set database sqlite
+
+# Salva la posizione anche durante la lettura
+set continuous-hist-save true
+
+
+# =========================
+# Scroll e zoom
+# =========================
+
+# Dimensione dello spostamento con j/k e frecce
+set scroll-step 50
+
+# Gli spostamenti di mezza pagina/pagina rispettano i bordi
+set scroll-page-aware true
+set scroll-full-overlap 0.08
+
+# Zoom più controllabile
+set zoom-step 10
+set zoom-min 10
+set zoom-max 1000
+
+# Mantieni il centro orizzontale durante lo zoom
+set zoom-center true
+
+
+# =========================
+# Ricerca e selezione
+# =========================
+
+# Cerca mentre scrivi
+set incremental-search true
+
+# Copia nella clipboard di sistema
+set selection-clipboard clipboard
+
+# Evidenziazione semitrasparente
+set highlight-color "rgba(85,85,85,0.50)"
+set highlight-active-color "rgba(136,136,136,0.65)"
+
+
+# =========================
+# UI
+# =========================
+
+set font "monospace 10"
+
+set default-bg "#111111"
+set default-fg "#dddddd"
+
+set statusbar-bg "#111111"
+set statusbar-fg "#dddddd"
+
+set inputbar-bg "#111111"
+set inputbar-fg "#dddddd"
+
+set notification-bg "#111111"
+set notification-fg "#dddddd"
+
+set notification-error-bg "#3b1111"
+set notification-error-fg "#ffdede"
+
+set notification-warning-bg "#332600"
+set notification-warning-fg "#fff1c2"
+
+# Mostra soltanto il nome del PDF
+set statusbar-basename true
+set window-title-basename true
+
+
+# =========================
+# Modalità scura opzionale
+# =========================
+
+# Disattivata di default per preservare TikZ, grafici e immagini
+set recolor false
+
+set recolor-lightcolor "#111111"
+set recolor-darkcolor "#dddddd"
+set recolor-keephue true
+
+
+# =========================
+# Keybind
+# =========================
+
+# Fit
+map w adjust_window width
+map b adjust_window best-fit
+
+# Zoom
+map + zoom in
+map - zoom out
+
+# Modalità scura
+map <C-r> recolor
+
+# Fullscreen: F11 rimane disponibile di default
+map <F11> toggle_fullscreen
+
+# Reload manuale, utile come fallback durante la compilazione LaTeX
+map r reload
+
+# Rotazione oraria
+map R rotate rotate-cw

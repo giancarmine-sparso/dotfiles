@@ -1,0 +1,109 @@
+{
+  "Display math": {
+    "prefix": "dm",
+    "body": [
+      "\\[",
+      "  ${1}",
+      "\\]"
+    ],
+    "description": "Display math"
+  },
+  "Equation": {
+    "prefix": "eq",
+    "body": [
+      "\\begin{equation}",
+      "  ${1}",
+      "\\end{equation}"
+    ],
+    "description": "Equation environment"
+  },
+  "Equation starred": {
+    "prefix": "eq*",
+    "body": [
+      "\\begin{equation*}",
+      "  ${1}",
+      "\\end{equation*}"
+    ],
+    "description": "Unnumbered equation"
+  },
+  "Align": {
+    "prefix": "ali",
+    "body": [
+      "\\begin{align}",
+      "  ${1} &= ${2} \\\\",
+      "  ${3} &= ${4}",
+      "\\end{align}"
+    ],
+    "description": "Align environment"
+  },
+  "Align starred": {
+    "prefix": "ali*",
+    "body": [
+      "\\begin{align*}",
+      "  ${1} &= ${2} \\\\",
+      "  ${3} &= ${4}",
+      "\\end{align*}"
+    ],
+    "description": "Unnumbered align environment"
+  },
+  "Cases": {
+    "prefix": "cases",
+    "body": [
+      "\\begin{cases}",
+      "  ${1}, & ${2} \\\\",
+      "  ${3}, & ${4}",
+      "\\end{cases}"
+    ],
+    "description": "Cases environment"
+  },
+  "Pmatrix": {
+    "prefix": "pmat",
+    "body": [
+      "\\begin{pmatrix}",
+      "  ${1} & ${2} \\\\",
+      "  ${3} & ${4}",
+      "\\end{pmatrix}"
+    ],
+    "description": "Parentheses matrix"
+  },
+  "Bmatrix": {
+    "prefix": "bmat",
+    "body": [
+      "\\begin{bmatrix}",
+      "  ${1} & ${2} \\\\",
+      "  ${3} & ${4}",
+      "\\end{bmatrix}"
+    ],
+    "description": "Bracket matrix"
+  },
+  "Fraction": {
+    "prefix": "fr",
+    "body": "\\frac{${1}}{${2}}",
+    "description": "Fraction"
+  },
+  "Integral": {
+    "prefix": "int",
+    "body": "\\int_{${1:a}}^{${2:b}} ${3}\\, d${4:x}",
+    "description": "Integral"
+  },
+  "Partial derivative": {
+    "prefix": "pd",
+    "body": "\\frac{\\partial ${1:f}}{\\partial ${2:x}}",
+    "description": "Partial derivative"
+  },
+  "Second partial derivative": {
+    "prefix": "pdd",
+    "body": "\\frac{\\partial^2 ${1:f}}{\\partial ${2:x}^2}",
+    "description": "Second partial derivative"
+  },
+  "Mixed partial derivative": {
+    "prefix": "pdm",
+    "body": "\\frac{\\partial^2 ${1:f}}{\\partial ${2:x}\\,\\partial ${3:y}}",
+    "description": "Mixed partial derivative"
+  },
+  "Partial derivative evaluated": {
+    "prefix": "pde",
+    "body": "\\left.\\frac{\\partial ${1:f}}{\\partial ${2:x}}\\right|_{${3:x_0}}",
+    "description": "Partial derivative evaluated at a point"
+  }
+}

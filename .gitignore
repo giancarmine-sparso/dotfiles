@@ -1,0 +1,60 @@
+# Vim / Neovim temporary files
+*.swp
+*.swo
+*.swn
+*.un~
+.*.un~
+*~
+
+# Backup files
+*.bak
+*.save
+*.old
+
+# Zsh generated files
+*.zwc
+.zcompdump*
+
+# Logs
+*.log
+
+# OS / desktop metadata
+.DS_Store
+.directory
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editor temporary files
+*.swp
+*.swo
+*.swn
+*.un~
+.*.un~
+*~
+
+# Backup files
+*.bak
+*.save
+*.old
+
+# Logs
+*.log
+
+# Zsh generated files
+*.zwc
+.zcompdump*
+
+# tmux plugins are installed separately
+tmux/.config/tmux/plugins/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS metadata
+.DS_Store
+.directory
