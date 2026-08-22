@@ -25,7 +25,6 @@ PACKAGES=(
   eza
   fastfetch
   btop
-  latexmk
 )
 
 STOW_PACKAGES=(
@@ -191,14 +190,38 @@ setup_neovim() {
   nvim --headless "+Lazy! sync" +qa
 }
 
+check_stow_conflicts() {
+  echo "==> Checking for Stow conflicts..."
+
+  cd "$DOTFILES_DIR"
+
+  if ! stow --simulate --restow --target="$HOME" "${STOW_PACKAGES[@]}"; then
+    echo "Error: Stow conflicts detected." >&2
+    echo "Resolve the conflicts above before running the bootstrap again." >&2
+    return 1
+  fi
+
+  if ! stow --simulate --restow --no-folding --target="$HOME" tmux; then
+    echo "Error: Stow conflicts detected for tmux." >&2
+    echo "Resolve the conflicts above before running the bootstrap again." >&2
+    return 1
+  fi
+
+  echo "==> No Stow conflicts found."
+}
 # Main
+
 detect_package_manager
 install_system_packages
 setup_zsh
 install_rust
 install_python_tools
+
+check_stow_conflicts
 stow_dotfiles
+
 setup_neovim
 install_tmux_plugins
+
 echo "==> Bootstrap complete."
 echo "==> Log out and back in for shell changes to take effect."
