@@ -2,9 +2,6 @@ return {
   {
     "saghen/blink.cmp",
     opts = {
-      snippets = {
-        preset = "luasnip",
-      },
       completion = {
         list = {
           selection = {
@@ -14,18 +11,8 @@ return {
         },
       },
       keymap = {
-        ["<Tab>"] = {
-          "select_next",
-          function()
-            return LazyVim.cmp.map({ "snippet_forward", "ai_nes", "ai_accept" })()
-          end,
-          "fallback",
-        },
-        ["<S-Tab>"] = {
-          "select_prev",
-          "snippet_backward",
-          "fallback",
-        },
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       },
     },
   },
