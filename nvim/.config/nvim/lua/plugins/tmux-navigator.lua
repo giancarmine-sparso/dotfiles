@@ -1,6 +1,11 @@
 return {
   {
     "christoomey/vim-tmux-navigator",
+    init = function()
+      -- the keys below are the only mappings; the plugin's own defaults
+      -- override them and add global terminal maps that type into the shell
+      vim.g.tmux_navigator_no_mappings = 1
+    end,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
