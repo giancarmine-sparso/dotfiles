@@ -6,6 +6,9 @@
 
 [[ $- != *i* ]] && return
 
+# dwi: mostra i contatori prima dell'instant prompt di p10k
+# [[ -x $HOME/.cargo/bin/dwi ]] && $HOME/.cargo/bin/dwi  --no-animation
+
 ############################################################
 
 # Powerlevel10k instant prompt — must stay near the top
@@ -133,6 +136,14 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$ZSH_CACHE_DIR/completions"
+
+# dwi: completamento di comandi e profili (dopo compinit). Carica lo script
+# solo se il dwi installato lo supporta, altrimenti non fa nulla.
+if (( $+commands[dwi] )); then
+  _dwi_completion="$(COMPLETE=zsh dwi 2>/dev/null)"
+  [[ $_dwi_completion == '#compdef dwi'* ]] && eval "$_dwi_completion"
+  unset _dwi_completion
+fi
 
 ############################################################
 
