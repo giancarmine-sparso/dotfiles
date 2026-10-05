@@ -41,7 +41,13 @@ return {
       })
     end,
     opts = {
-      colorscheme = selected_colorscheme,
+      -- a failed :colorscheme fires no ColorScheme event, so an invalid saved
+      -- name falls back to the default without being persisted
+      colorscheme = function()
+        if not pcall(vim.cmd.colorscheme, selected_colorscheme) then
+          vim.cmd.colorscheme(default_colorscheme)
+        end
+      end,
     },
   },
 }
